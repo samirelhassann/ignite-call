@@ -44,13 +44,16 @@
                 "newlinesBetween": "always",
                 "groups": [
                     "/^react/",
+                    "/^next/",
                     "module",
                     "/^@shared/",
-                    "/css/",
-                    "/style/",
-                    "/assets/",
                     "/^~/",
                     "/components/",
+                    [
+                        "/assets/",
+                        "/style/",
+                        "/css/"
+                    ],
                     [
                         "parent",
                         "sibling",
