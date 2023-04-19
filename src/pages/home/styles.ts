@@ -19,12 +19,16 @@ export const Hero = styled("div", {
   padding: "0 $10",
 
   "@media(max-width: 800px)": {
+    display: "flex",
+    flexDirection: "column",
     textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
   },
 
-  [`${Heading}`]: {},
+  [`> ${Heading}`]: {},
 
-  [`${Text}`]: {
+  [`> ${Text}`]: {
     marginTop: "$2",
     color: "$gray200",
   },
