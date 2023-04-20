@@ -52,7 +52,10 @@
                 "groups": [
                     "/^react/",
                     "module",
-                    ["/^@shared/", "/^@/"],
+                    [
+                        "/^@shared/",
+                        "/^@/"
+                    ],
                     "/^~/",
                     "/components/",
                     [
