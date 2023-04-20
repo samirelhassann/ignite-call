@@ -1,4 +1,4 @@
-import { Box, Button, styled } from "@saturn-design-system/react";
+import { Box, Button, Text, styled } from "@saturn-design-system/react";
 
 export const Form = styled(Box, {
   display: "grid",
@@ -17,5 +17,13 @@ export const Form = styled(Box, {
     [`> ${Button}`]: {
       width: "10rem",
     },
+  },
+});
+
+export const FormAnnotation = styled("div", {
+  marginTop: "$2",
+
+  [`> ${Text}`]: {
+    color: "$gray400",
   },
 });
