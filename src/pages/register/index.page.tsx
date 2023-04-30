@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
+import { AxiosError } from "axios";
 import { useRouter } from "next/router";
 import { ArrowRight } from "phosphor-react";
 import { z } from "zod";
 
+import { api } from "@/lib/axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Heading, MultiStep, Text, TextInput } from "@saturn-design-system/react";
 
@@ -26,6 +28,7 @@ const Register = () => {
     register,
     handleSubmit,
     setValue,
+    setError,
     formState: { errors, isSubmitting } } = useForm<RegisterFormData>({
       resolver: zodResolver(registerFormSchema)
     });
@@ -40,7 +43,21 @@ const Register = () => {
   }, [router.query?.username]);
 
   const handleRegister = async (data: RegisterFormData) => {
-    console.log(data);
+    try {
+      await api.post("/users", {
+        username: data.username,
+        completeName: data.completeName,
+      });
+
+      await router.push("/register/calendar-connect");
+    } catch (e) {
+      if (e instanceof AxiosError && e?.response?.data?.message) {
+        setError("username", { type: "custom", message: e.response.data.message });
+        return;
+      }
+
+      console.error(e);
+    }
   };
 
   return <Container>
