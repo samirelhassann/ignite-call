@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse, NextPageContext } from "next";
 import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
@@ -11,9 +11,9 @@ const GOOGLE_USER_INFO_PROFILE =
   "https://www.googleapis.com/auth/userinfo.profile";
 const GOOGLE_USER_INFO_EMAIL = "https://www.googleapis.com/auth/userinfo.email";
 
-const buildNextAuthOptions = (
-  req: NextApiRequest,
-  res: NextApiResponse
+export const buildNextAuthOptions = (
+  req: NextApiRequest | NextPageContext["req"],
+  res: NextApiResponse | NextPageContext["res"]
 ): NextAuthOptions => {
   return {
     adapter: PrismaAdapter({ req, res }),
@@ -52,7 +52,7 @@ const buildNextAuthOptions = (
 };
 
 const auth = async (req: NextApiRequest, res: NextApiResponse) => {
-  return await NextAuth(req, res, buildNextAuthOptions(req, res));
+  return NextAuth(req, res, buildNextAuthOptions(req, res));
 };
 
 export default auth;

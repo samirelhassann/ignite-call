@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse, NextPageContext } from "next";
 import { Adapter } from "next-auth/adapters";
+
 import { destroyCookie, parseCookies } from "nookies";
 
 import { User } from "@prisma/client";
@@ -8,8 +9,8 @@ import { User } from "@prisma/client";
 import { prisma } from "../prisma";
 
 interface PrismaAdapterProps {
-  req: NextApiRequest;
-  res: NextApiResponse;
+  req: NextApiRequest | NextPageContext["req"];
+  res: NextApiResponse | NextPageContext["res"];
 }
 
 const PrismaAdapter = ({ req, res }: PrismaAdapterProps): Adapter => {

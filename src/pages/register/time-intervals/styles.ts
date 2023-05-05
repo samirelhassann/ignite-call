@@ -1,4 +1,4 @@
-import { Box, styled } from "@saturn-design-system/react";
+import { Box, Text, styled } from "@saturn-design-system/react";
 
 export const IntervalBox = styled(Box, {
   marginTop: "$6",
@@ -20,21 +20,27 @@ export const IntervalItem = styled("div", {
 
   "& + &": {
     border: "1px solid $gray600",
-  }
+  },
 });
 
-export const IntervalDay = styled("div",{
+export const IntervalDay = styled("div", {
   display: "flex",
   alignItems: "center",
-  gap: "$3"
+  gap: "$3",
 });
 
-export const IntervalInputs = styled("div",{
+export const IntervalInputs = styled("div", {
   display: "flex",
   alignItems: "center",
   gap: "$2",
 
   "input::-webkit-calendar-picker-indicator": {
-    filter: "invert(100%) brightness(30%) "
-  }
+    filter: "invert(100%) brightness(30%) ",
+  },
+});
+
+export const FormError = styled(Text, {
+  color: "#f75a68",
+  marginBottom: "$4",
+  alignSelf: "center",
 });
