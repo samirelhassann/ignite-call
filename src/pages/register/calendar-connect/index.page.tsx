@@ -2,6 +2,7 @@ import React from "react";
 
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+
 import { ArrowRight, Check } from "phosphor-react";
 
 import { Button, Heading, MultiStep, Text } from "@saturn-design-system/react";

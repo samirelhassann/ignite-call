@@ -2,8 +2,9 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
-import { AxiosError } from "axios";
 import { useRouter } from "next/router";
+
+import { AxiosError } from "axios";
 import { ArrowRight } from "phosphor-react";
 import { z } from "zod";
 

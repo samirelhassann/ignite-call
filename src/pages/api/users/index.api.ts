@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+
 import { setCookie } from "nookies";
 
 import { prisma } from "@/lib/prisma";
@@ -29,7 +30,7 @@ export default async function handler(
 
   const user = await prisma.user.create({
     data: {
-      username: username,
+      username,
       complete_name: completeName,
     },
   });
