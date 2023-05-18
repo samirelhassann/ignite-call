@@ -9,7 +9,8 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:@next/next/recommended",
         "airbnb-base",
-        "airbnb-typescript-prettier"
+        "airbnb-typescript-prettier",
+        "plugin:react-hooks/recommended"
     ],
     "overrides": [],
     "parser": "@typescript-eslint/parser",
@@ -24,11 +25,16 @@
         "unused-imports"
     ],
     "rules": {
+        "react/require-default-props": 0, 
+        "import/no-extraneous-dependencies": 0,
         "import/no-unresolved": 0,
         "import/extensions": 0,
         "import/order": 0,
         "import/prefer-default-export": 0,
         "react/jsx-props-no-spreading": 0,
+        "react/react-in-jsx-scope": 0,
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
         "prettier/prettier": [
             "error"
         ],

@@ -24,6 +24,9 @@ export const buildNextAuthOptions = (
         clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
         authorization: {
           params: {
+            prompt: "consent",
+            access_type: "offline",
+            response_type: "code",
             scope: `${GOOGLE_CALENDAR_SCOPE} ${GOOGLE_USER_INFO_PROFILE} ${GOOGLE_USER_INFO_EMAIL}`,
           },
         },
