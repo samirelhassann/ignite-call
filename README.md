@@ -1,6 +1,6 @@
 # Ignite call
 
-system that allows the scheduling of sessions considering the availability of google calendar using ReactJS + NextJS
+System that allows the scheduling of sessions considering the availability of google calendar using ReactJS + NextJS
 
 This is a project used for study purposes only • [Samir El Hassan](https://github.com/samirelhassann)
 
@@ -10,9 +10,10 @@ This is a project used for study purposes only • [Samir El Hassan](https://git
 
 ## Additional Libraries
 
-- googleapis
+- primsa
 - next-auth
 - next-seo
+- googleapis
 - nookies
 - phospor-react
 - zod
