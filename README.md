@@ -25,7 +25,7 @@ This is a project used for study purposes only • [Samir El Hassan](https://git
 
 ## Live Preview
 
-Check live preview: [https://samirelhassann.github.io/tailwind-spotify/](https://ignite-call-rust.vercel.app/)
+Check live preview: https://ignite-call-rust.vercel.app/
 
 ## Instalation
 
